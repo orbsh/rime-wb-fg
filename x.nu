@@ -77,8 +77,8 @@ export def 'setup linux' [] {
     sudo rime_deployer --build ~/.config/ibus/rime /usr/share/rime-data ~/.config/ibus/rime/build
 }
 
-def cmpl-dict [ctx] {
-    let x = $ctx | argx parse
+def cmpl-dict [buffer] {
+    let x = $buffer | argx parse
     let code = get_code $x.pos.word $env.wubi86
     search $code $env.wubi86
 }
